@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 from openpyxl import load_workbook #Библиотека для работы с XLSX
 from matplotlib import pyplot #Библиотека построения графов
 
