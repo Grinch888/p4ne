@@ -24,9 +24,14 @@ def Classifier(configs):
                     s = s.rstrip()
                     host = {"host":s}
                     hosts.append(host)
-    return print(ips), print(ifaces), print(hosts)
+    return ips, ifaces, hosts
 
-p = Classifier(glob("*.txt"))
+i, inter, h = Classifier(glob("*.txt"))
+print(i)
+print(inter)
+print(h)
+
+
 
 
 
