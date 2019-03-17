@@ -1,7 +1,8 @@
 from glob import glob as glob
-
+import re
 
 confs = glob("*.txt")
+
 l = []
 
 for f in confs:
