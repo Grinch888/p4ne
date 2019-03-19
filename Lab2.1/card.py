@@ -23,9 +23,7 @@ def checkcards(cardsc):
         URL = "https://lookup.binlist.net/"
         URL = URL + i
         r = requests.get(URL, headers={'Accept-version': "3"})
-#        print(r)
-#        print(type(r.status_code))
-#        print(not (r.status_code == 404))
+
         if (r.status_code == 200):
             obj = json.loads(r.content.decode())
             print(i + " " + obj['bank']['name'])
