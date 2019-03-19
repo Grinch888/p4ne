@@ -1,4 +1,4 @@
-import json, pprint, requests, glob
+import json, requests, glob
 from time import sleep
 
 
