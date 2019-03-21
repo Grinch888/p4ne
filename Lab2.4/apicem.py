@@ -34,6 +34,8 @@ def hosts(token):
     header['X-Auth-Token'] = token
     r = requests.get(url, headers=header, verify=False)
     return r
+
+
 """
 token = gettoken()
 r = topology(token)

@@ -1,0 +1,13 @@
+- hosts: fs-ga
+  tasks:
+    - name: show interfaces information
+      command: ifconfig -a
+      register: int_out
+
+    - name: find packets in ifconfig -a
+      set_fact:
+        packets: "{{ int_out['stdout'] | regex_findall('RX packets:([0-9]+)') }}"
+
+    - name: summary of packets from find
+      debug:
+        msg: "Summary of received packets: {{ packets | map('int') | sum }}"
