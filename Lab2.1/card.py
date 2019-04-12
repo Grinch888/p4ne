@@ -19,6 +19,7 @@ def converter(cards):
     return cardsc
 
 def checkcards(cardsc):
+    l = []
     for i in cardsc:
         URL = "https://lookup.binlist.net/"
         URL = URL + i
@@ -26,10 +27,17 @@ def checkcards(cardsc):
 
         if (r.status_code == 200):
             obj = json.loads(r.content.decode())
-            print(i + " " + obj['bank']['name'])
-        sleep(2)
-    return print(obj['bank']['name'])
+            print(type(obj['bank']['name']))
+            if 'name' in obj['bank']:
+                i = obj['bank']['name']
+                l = l.append(i)
+#                print(i + " " + obj['bank']['name'])
+#                print(len(l))
+#        sleep(1)
+    return (l)
 
 cards = converter(cardlist(glob.glob("*.json")))
 
-checkcards(cards)
+l = checkcards(cards)
+for i in l:
+    print(i)
